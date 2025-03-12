@@ -3,196 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Nguyễn Thiện Nhân</title>
+    <title>Thông tin Nhóm</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="header-content">
-                <img src="7.jpg" alt="Ảnh đại diện" class="avatar">
-                <h1 id="name">Nguyễn Thiện Nhân</h1>
-                <p id="job-title">Sinh viên ngành Công nghệ Thông tin - Đại học HUTECH</p>
-                <div class="social-links">
-                    <a href="https://github.com/Thiennhan20" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://facebook.com/nguyenthiennhan" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="mailto:nhanntn2203@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </header>
+    <div class="team-container">
+        <h2>Thành viên trong nhóm</h2>
+        <div class="button-container">
+            <button class="member-btn" data-member="1">Nguyễn Thiện Nhân</button>
+            <button class="member-btn" data-member="2">Lê Văn An</button>
+            <button class="member-btn" data-member="3">Trần Minh Huy</button>
+            <button class="member-btn" data-member="4">Phạm Hoàng Duy</button>
+            <button class="member-btn" data-member="5">Đặng Bảo Trâm</button>
+        </div>
+        <div class="member-info" id="member-info">
+            <h3 id="member-name">Chọn một thành viên để xem thông tin</h3>
+            <div id="member-details"></div>
+        </div>
+    </div>
 
-        <!-- Giới thiệu -->
-        <section class="about">
-            <h2>Giới thiệu</h2>
-            <p id="about-text">
-                Tôi là Nguyễn Thiện Nhân, một sinh viên năm cuối ngành Công nghệ Thông tin tại Đại học HUTECH. 
-                Với niềm đam mê công nghệ và sự kiên trì học hỏi, tôi đã tích lũy được nhiều kiến thức và kinh nghiệm 
-                trong lập trình, phân tích dữ liệu và phát triển ứng dụng. Tôi luôn tìm kiếm cơ hội để áp dụng những gì 
-                đã học vào thực tế và không ngừng cải thiện bản thân.
-            </p>
-        </section>
-
-        <!-- Quá trình học tập -->
-        <section class="education">
-            <h2>Quá trình học tập</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Năm 1 - Khởi đầu</h3>
-                    <p>
-                        Làm quen với lập trình cơ bản thông qua ngôn ngữ C và Python. 
-                        Tham gia các hoạt động ngoại khóa và câu lạc bộ CNTT.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Năm 2 - Phát triển kỹ năng</h3>
-                    <p>
-                        Học sâu hơn về cấu trúc dữ liệu, giải thuật và cơ sở dữ liệu. 
-                        Bắt đầu tham gia các dự án nhỏ về phát triển web và ứng dụng.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Năm 3 - Chuyên sâu</h3>
-                    <p>
-                        Tập trung vào các môn học chuyên ngành như Machine Learning, 
-                        Phân tích dữ liệu và Phát triển ứng dụng di động. 
-                        Tham gia các cuộc thi hackathon và dự án nhóm.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Năm 4 - Hoàn thiện</h3>
-                    <p>
-                        Thực hiện đồ án tốt nghiệp về ứng dụng AI trong phân tích dữ liệu. 
-                        Tích lũy kinh nghiệm thực tế thông qua thực tập tại các công ty công nghệ.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Kỹ năng -->
-        <section class="skills">
-            <h2>Kỹ năng</h2>
-            <div class="skill-cards">
-                <div class="skill-card">
-                    <h3>Lập trình</h3>
+    <script>
+        const members = {
+            1: {
+                name: "Nguyễn Thiện Nhân",
+                image: "7.jpg",
+                details: `
+                    <img src="7.jpg" alt="Nguyễn Thiện Nhân" style="width: 150px; height: auto; border-radius: 50%; margin-bottom: 15px;">
+                    <p><strong>Sinh viên ngành Công nghệ Thông tin - Đại học HUTECH</strong></p>
+                    <p>Với niềm đam mê công nghệ và sự kiên trì học hỏi, tôi đã tích lũy được nhiều kiến thức và kinh nghiệm trong lập trình, phân tích dữ liệu và phát triển ứng dụng.</p>
+                    <h4>Kỹ năng:</h4>
                     <ul>
                         <li>Python, Java, C++</li>
                         <li>JavaScript, HTML, CSS</li>
                         <li>React, Node.js</li>
                     </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Phân tích dữ liệu</h3>
+                    <h4>Dự án tiêu biểu:</h4>
                     <ul>
-                        <li>SQL, Pandas, NumPy</li>
-                        <li>Machine Learning</li>
-                        <li>Data Visualization</li>
+                        <li>Hệ thống quản lý thư viện (Python, SQL)</li>
+                        <li>Website bán hàng (React, Node.js)</li>
+                        <li>Phân tích dữ liệu COVID-19 (Python, Matplotlib)</li>
                     </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Công cụ</h3>
+                    <h4>Liên hệ:</h4>
+                    <p>Email: <a href='mailto:nhanntn2203@gmail.com'>nhanntn2203@gmail.com</a></p>
+                    <p>GitHub: <a href='https://github.com/Thiennhan20' target='_blank'>Thiennhan20</a></p>
+                    <p>Facebook: <a href='https://facebook.com/nguyenthiennhan' target='_blank'>Nguyễn Thiện Nhân</a></p>
+                `
+            },
+            2: {
+                name: "Nguyễn Hữu Thành",
+                details: `<p><strong>Backend Developer</strong></p>
+                        <img src="anh.png" alt="Nguyễn Hữu Thành" style="width: 150px; height: auto; border-radius: 50%; margin-bottom: 15px;">
+                    <h4>Kỹ năng:</h4>
                     <ul>
-                        <li>Git, GitHub</li>
-                        <li>Docker, Kubernetes</li>
-                        <li>VS Code, Jupyter Notebook</li>
+                        <li>Python, Java, C++</li>
+                        <li>JavaScript, HTML, CSS</li>
+                        <li>React, Node.js</li>
                     </ul>
-                </div>
-            </div>
-        </section>
+                    <h4>Dự án tiêu biểu:</h4>
+                    <ul>
+                        <li>Hệ thống quản lý thư viện (Python, SQL)</li>
+                        <li>Website bán hàng (React, Node.js)</li>
+                        <li>Phân tích dữ liệu COVID-19 (Python, Matplotlib)</li>
+                    </ul>
+                          <p>Chuyên về Java Spring Boot và Node.js. Có kinh nghiệm làm việc với hệ thống microservices và RESTful API.</p>`
+            },
+            3: {
+                name: "Trần Minh Huy",
+                details: `<p><strong>Frontend Developer</strong></p>
+                          <p>Thành thạo React và Vue.js. Từng tham gia nhiều dự án thiết kế giao diện web tối ưu trải nghiệm người dùng.</p>`
+            },
+            4: {
+                name: "Phạm Hoàng Duy",
+                details: `<p><strong>Chuyên gia UX/UI Design</strong></p>
+                          <p>Có kinh nghiệm làm việc với Figma và Adobe XD, tập trung vào việc tối ưu hóa giao diện người dùng.</p>`
+            },
+            5: {
+                name: "Đặng Bảo Trâm",
+                details: `<p><strong>Chuyên viên AI & Data Science</strong></p>
+                          <p>Làm việc với Python, Machine Learning, và phân tích dữ liệu lớn. Đã triển khai nhiều mô hình học máy thực tế.</p>`
+            }
+        };
+        
+        document.querySelectorAll(".member-btn").forEach(button => {
+            button.addEventListener("click", function() {
+                const memberId = this.getAttribute("data-member");
+                document.getElementById("member-name").textContent = members[memberId].name;
+                document.getElementById("member-details").innerHTML = members[memberId].details;
+            });
+        });
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .team-container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .member-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .member-btn:hover {
+            background: #0056b3;
+        }
+        .member-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        #member-name {
+            font-size: 22px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        #member-details ul {
+            padding-left: 20px;
+        }
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 15px;
+        }
 
-        <!-- Dự án tiêu biểu -->
-        <section class="projects">
-            <h2>Dự án tiêu biểu</h2>
-            <div class="project-list">
-                <div class="project-item">
-                    <h3>Hệ thống quản lý thư viện</h3>
-                    <p>
-                        Phát triển hệ thống quản lý thư viện sử dụng Python và SQL. 
-                        Hỗ trợ quản lý sách, mượn/trả sách và thống kê dữ liệu.
-                    </p>
-                </div>
-                <div class="project-item">
-                    <h3>Website bán hàng</h3>
-                    <p>
-                        Xây dựng website bán hàng sử dụng React và Node.js. 
-                        Tích hợp thanh toán trực tuyến và quản lý đơn hàng.
-                    </p>
-                </div>
-                <div class="project-item">
-                    <h3>Phân tích dữ liệu COVID-19</h3>
-                    <p>
-                        Phân tích và trực quan hóa dữ liệu COVID-19 sử dụng Python và thư viện Matplotlib.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Kinh nghiệm thực tế -->
-        <section class="experience">
-            <h2>Kinh nghiệm thực tế</h2>
-            <div class="experience-list">
-                <div class="experience-item">
-                    <h3>Thực tập tại FPT Software</h3>
-                    <p>
-                        Tham gia phát triển ứng dụng quản lý dự án sử dụng Java và Spring Boot. 
-                        Hỗ trợ phân tích yêu cầu và kiểm thử phần mềm.
-                    </p>
-                </div>
-                <div class="experience-item">
-                    <h3>Freelancer</h3>
-                    <p>
-                        Phát triển website và ứng dụng nhỏ cho khách hàng cá nhân. 
-                        Sử dụng React, Node.js và MongoDB.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Giải thưởng -->
-        <section class="awards">
-            <h2>Giải thưởng</h2>
-            <div class="awards-list">
-                <div class="award-item">
-                    <h3>Giải nhì Hackathon HUTECH 2023</h3>
-                    <p>
-                        Đề tài: Ứng dụng AI trong quản lý năng lượng thông minh.
-                    </p>
-                </div>
-                <div class="award-item">
-                    <h3>Học bổng sinh viên xuất sắc</h3>
-                    <p>
-                        Nhận học bổng 2 năm liên tiếp vì thành tích học tập xuất sắc.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Kỹ năng mềm -->
-        <section class="soft-skills">
-            <h2>Kỹ năng mềm</h2>
-            <div class="soft-skills-list">
-                <ul>
-                    <li>Làm việc nhóm</li>
-                    <li>Quản lý thời gian</li>
-                    <li>Giao tiếp hiệu quả</li>
-                    <li>Giải quyết vấn đề</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Liên hệ -->
-        <section class="contact">
-            <h2>Liên hệ</h2>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:nhanntn2203@gmail.com">nhanntn2203@gmail.com</a></p>
-                <p>GitHub: <a href="https://github.com/Thiennhan20">Thiennhan20</a></p>
-                <p>Facebook: <a href="https://facebook.com/nguyenthiennhan">Nguyễn Thiện Nhân</a></p>
-            </div>
-        </section>
-    </div>
-
-    <script src="script.js"></script>
+    </style>
 </body>
 </html>
